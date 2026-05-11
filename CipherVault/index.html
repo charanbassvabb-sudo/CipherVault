@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CipherVault - Password Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="icons/css/all.min.css">
+</head>
+<body class="index-page">
+    <div class="container">
+
+        <!-- Header & Navigation -->
+        <header>
+            <h1><a href="index.html">CipherVault</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Passwords ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vault.html">Encrypt & Store</a></li>
+                            <li><a href="password.html">Check Strength</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html" id="contact-link">Contact Us</a></li>
+                    <li id="login-btn"><a href="login.html">Log In</a></li>
+
+                    <!-- Nav Buttons -->
+                    <div class="nav-buttons">
+                        <a href="register.html">
+                            <button class="btn btn-primary" id="get-started-btn">Get Started Now</button>
+                        </a>
+                        <a href="about.html">
+                            <button class="btn btn-secondary" id="contact-us-btn">Contact Us</button>
+                        </a>
+                    </div>
+
+                    <li id="profile-section" style="display: none;">
+                        <a href="profile.html"><i class="fas fa-user"></i></a>
+                    </li>
+
+                    <li id="logout-btn" style="display: none;">
+                        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Image -->
+        <img src="modern-security-system-design-cartoon-vector-illustration_1138841-26458.jpg" alt="Security Image" id="security-image" />
+
+        <!-- Main Content -->
+        <main class="content-wrapper">
+            <h2>
+                <span class="cyber-shield">Cyber Shield</span><br />
+                <span class="cyber-shield">for Passwords</span>
+            </h2>
+            <p>
+                Experience peace of mind navigating the digital landscape.<br />
+                Stay secure with cutting-edge encryption technology.<br />
+                Your personal data is always protected with the highest standards of security.
+            </p>
+
+            <button class="btn btn-secondary" id="get-started-btn2" onclick="window.location.href='register.html'">Get Started Now</button>
+            <a href="vault.html" class="btn-open-vault">Open Vault</a>
+
+            <!-- Features -->
+            <div class="features-container">
+                <div class="feature-item">
+                    <span class="checkmark">&#10004;</span>
+                    <p>Cutting-edge technology</p>
+                </div>
+                <div class="feature-item">
+                    <span class="checkmark">&#10004;</span>
+                    <p>Top-notch encryption standards</p>
+                </div>
+                <div class="feature-item">
+                    <span class="checkmark">&#10004;</span>
+                    <p>Instant password storage</p>
+                </div>
+                <div class="feature-item">
+                    <span class="checkmark">&#10004;</span>
+                    <p>Complete security and privacy</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 CipherVault. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script Files -->
+    <script src="script.js" defer></script>
+    
+</body>
+</html>

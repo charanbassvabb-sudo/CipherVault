@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="icons/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1><a href="index.html">CipherVault</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Passwords ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="vault.html">Encrypt & Store</a></li>
+              <li><a href="password.html">Check Strength</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" id="contact-link">Contact Us</a></li>
+          <li id="login-btn"><a href="login.html">Log In</a></li>
+
+          <div class="nav-buttons">
+            <a href="register.html">
+              <button class="btn btn-primary" id="get-started-btn">Get Started Now</button>
+            </a>
+            <a href="about.html">
+              <button class="btn btn-secondary" id="contact-us-btn">Contact Us</button>
+            </a>
+          </div>
+
+          <li id="profile-section" style="display: none;">
+            <a href="profile.html"><i class="fas fa-user"></i></a>
+          </li>
+          <li id="logout-link" style="display: none;">
+            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Welcome to Your Profile, <span id="display-username"></span></h2>
+      <p>Here, you can view and manage your profile settings. You can also log out.</p>
+
+      <div class="profile-info">
+        <i class="fas fa-user"></i>
+        <p><span id="username"></span></p>
+      </div>
+
+      <button class="btn btn-secondary" onclick="logout()">Log Out</button>
+      <button class="btn btn-danger" onclick="deleteUser()">Delete Account</button>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 CipherVault. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function displayUsername() {
+      const username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('display-username').textContent = username;
+        document.getElementById('username').textContent = username;
+      } else {
+        console.log("No username found in localStorage.");
+      }
+    }
+      displayUsername();
+
+    
+  </script>
+
+</body>
+</html>

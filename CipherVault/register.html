@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="signup-page">
+    <header class="signup-header">
+        <h1><a href="index.html" class="site-title">CipherVault</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Passwords ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vault.html">Encrypt & Store</a></li>
+                        <li><a href="password.html">Check Strength</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" id="contact-link">Contact Us</a></li>
+                <li id="login-btn"><a href="login.html">Log In</a></li> 
+                
+                <div class="nav-buttons" id="register-btn">
+                    <a href="register.html"><button class="btn btn-primary">Get Started Now</button></a>
+                    <a href="about.html">
+                        <button class="btn btn-secondary">Contact Us</button>
+                    </a>
+                </div>
+
+                
+                <li id="profile-section">
+                    <a href="profile.html">
+                        <i class="fas fa-user"></i> 
+                    </a>
+                </li>
+                <li id="logout-btn">
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i> 
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="signup-container">
+        <div class="signup-left"> 
+            <h2>Welcome!</h2>
+            <p>Join us and track your journey to success.</p>
+        </div>
+        <div class="signup-right">
+            <div class="signup-form-container">
+                <h2>Create Account</h2>
+                <input type="text" id="signup-username" placeholder="Username" required>
+                
+                <label for="signup-password"></label>
+                <div class="password-container">
+                    <input type="password" id="signup-password" placeholder="Enter password" required>
+                    <i id="toggle-password-signup" class="eye-icon" onclick="togglePassword('signup-password', 'toggle-password-signup')">👁️</i>
+                </div>
+        
+                <button class="signup-form-btn" onclick="signup()">Sign Up</button>
+        
+                <p class="signup-text">Already have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </div>
+        
+</body>
+</html>

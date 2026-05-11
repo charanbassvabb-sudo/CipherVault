@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <head>
+        <!-- Include Font Awesome -->
+        <link rel="stylesheet" href="icons/css/all.min.css">
+    </head>
+    
+    <script src="script.js"></script>
+</head>
+<body class="vault-page">
+     <!-- Header & Navigation -->
+     <header>
+        <h1><a href="index.html">CipherVault</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Passwords ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vault.html">Encrypt & Store</a></li>
+                        <li><a href="password.html">Check Strength</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="about.html" id="contact-link">Contact Us</a></li>
+                <li id="login-btn"><a href="login.html">Log In</a></li>
+
+                <!-- Nav Buttons -->
+                <div class="nav-buttons">
+                    <a href="register.html">
+                        <button class="btn btn-primary" id="get-started-btn">Get Started Now</button>
+                    </a>
+                    <a href="about.html">
+                        <button class="btn btn-secondary" id="contact-us-btn">Contact Us</button>
+                    </a>
+                </div>
+
+                <li id="profile-section" style="display: none;">
+                    <a href="profile.html"><i class="fas fa-user"></i></a>
+                </li>
+
+                <li id="logout-btn" style="display: none;">
+                    <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+        <body class="centered-page">
+            <div class="vault-container">
+                <h2>Store Your Passwords Securely</h2>
+                <div class="input-group">
+                    <input type="text" id="website-input" placeholder="Website" class="input-field">
+                
+                    
+                    <input type="text" id="site-username-input" placeholder="Username" class="input-field">
+                    
+                    <div class="password-container">
+                        <input type="password" id="password-input" placeholder="Password" class="input-field">
+                        <i id="toggle-password" onclick="togglePassword('password-input', 'toggle-password')">👁️</i>
+                    </div>
+                </div>
+        
+                <!-- Save Password Button -->
+                <button id="store-password-btn" class="btn btn-primary">Save Password</button>
+
+        
+                <!-- Show Saved Passwords Button -->
+                    
+                <button id="show-passwords-btn" class="btn btn-secondary">Show Saved Passwords</button>
+            </div>
+    
+    
+   
+    
+
+            <!-- Vault Container to Display Passwords -->
+            <div id="vault" class="vault-container"></div>
+        </div>
+    </body>
+    <script>
+ const showPasswordsBtn = document.getElementById('show-passwords-btn');
+let passwordsVisible = false;
+
+if (showPasswordsBtn) {
+showPasswordsBtn.addEventListener('click', () => {
+    const loggedInUser = localStorage.getItem('username');
+    if (loggedInUser) {
+        const vault = document.getElementById('vault'); // Get the element containing passwords
+
+        if (passwordsVisible) {
+            // Hide passwords
+            vault.style.display = 'none'; // Hide the vault (containing passwords)
+            showPasswordsBtn.textContent = 'Show Stored Passwords'; // Change button text
+            passwordsVisible = false;
+        } else {
+            // Show passwords
+            getPasswords(loggedInUser); // Assuming this function fetches and displays the passwords
+            vault.style.display = 'inline-block'; // Show the vault (containing passwords)
+            showPasswordsBtn.textContent = 'Hide Stored Passwords'; // Change button text
+            passwordsVisible = true;
+        }
+    } else {
+        alert('Please log in first.');
+    }
+});
+}
+        
+   </script>
+    
+    
+ 
+   
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 CipherVault. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- Add other icons as needed -->
+        </div>
+    </div>
+</footer>
+
+</html>

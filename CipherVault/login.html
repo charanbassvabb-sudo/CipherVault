@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In</title>
+    <script src="auth.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="login-page">
+    <header>
+        <h1><a href="index.html">CipherVault</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Passwords ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vault.html">Encrypt & Store</a></li>
+                        <li><a href="password.html">Check Strength</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" id="contact-link">Contact Us</a></li>
+                <li id="login-btn"><a href="login.html">Log In</a></li> 
+                
+                <div class="nav-buttons" id="register-btn">
+                    <a href="register.html"><button class="btn btn-primary">Get Started Now</button></a>
+                    <a href="about.html">
+                        <button class="btn btn-secondary">Contact Us</button>
+                    </a>
+                </div>
+
+              
+        </nav>
+    </header>
+    <p id="success-message" style="color: green;"></p>
+
+    <!-- Left Side - Welcome Message -->
+    <div class="welcome-text">
+        <h1>Welcome<br>Back</h1> <!-- "Back" moved to a new line -->
+        <p>Secure your passwords, secure your digital life. <br>Log in to access your encrypted vault</p>
+    </div>
+
+    <!-- Right Side - Login Form -->
+    <div class="login-form">
+        <h2>Sign In</h2>
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" placeholder="Enter username">
+    
+        <label for="login-password">Password</label>
+    <div class="password-container">
+        <input type="password" id="login-password" placeholder="Enter password">
+        <i id="toggle-password-login" class="eye-icon" onclick="togglePassword('login-password', 'toggle-password-login')">👁️</i>
+    </div>
+        <button onclick="login()">Log In</button>
+
+        <p class="signup-text">Don't have an account? <a href="register.html">Sign Up</a></xp>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 CipherVault. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
